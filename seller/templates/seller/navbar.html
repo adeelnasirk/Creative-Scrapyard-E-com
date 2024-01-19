@@ -1,0 +1,81 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark navbar-bg">
+  <div class="container ">
+    <a class="navbar-brand" href="{% url 'home' %}">CSYARD</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        
+        
+        {% if request.user.is_authenticated %}
+        <li class="nav-item active">
+          <a class="nav-link text-white " href="{% url 'seller-page' %}">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link text-white " href="{% url 'seller-profile' request.user.id %}">Profile</a>
+        </li>
+       
+        {% else %}
+        <li class="nav-item active">
+          <a class="nav-link text-white " href="{% url 'home' %}">Customer page</a>
+        </li>
+        {% endif %}
+        <li class="nav-item ">
+          <a class="nav-link text-white " href="{% url 'seller-store' %}">Store</a>
+        </li>
+
+      </ul>
+      
+  
+    </div>
+    <div class="form-inline my-2 my-lg-0 ">
+        {% if request.user.is_authenticated %}
+        <button class="btn btn-outline-light btn-sm"><small>Welcome, {{ request.user.username }} </small></button>
+        <a href="{% url 'logout' %}"class="btn btn-warning btn-sm" ><small>Logout</small></a>
+        {% else %}
+        <p class="text-white navbar-nav"> <small>Welcome Artist You Can Sell Your Creative Work Here.</small></p>
+        {% endif %}
+    </div>
+     
+
+
+
+  </div>
+</nav>
+
+<!-- Category -->
+
+<nav class="navbar bg-expand-lg navbar-cat-bg">
+ <div class="container ">
+  <a class="nav-link" href="" >All Category</a>
+  
+  <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon ml-auto"></span>
+  </button> -->
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+  
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'seller-store' %}"></a>
+      </li>
+
+    </ul>
+  </div>
+
+
+  {% if request.user.is_authenticated %}
+  <div class="form-inline my-2 my-lg-0 p-1">
+    <a href="#"class="btn btn-outline-dark btn-sm ">You are a {{request.user.role}}</a>
+  </div>
+  {% else %}
+  <div class="form-inline my-2 my-lg-0 p-1">
+    <a href="{% url 'register-seller' %}"class="btn btn-primary btn-sm "><small>Signin/Signup as Artist</small></a>
+  </div>
+  {% endif %}
+
+
+ </div>
+</nav>
+  

@@ -1,0 +1,48 @@
+{% extends 'seller/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {% for product in product %}
+        <div class="col col-lg-4 " >
+            <img class="thumbnail" src="{{ product.image_url }}" alt="placeholder">
+            {{ product.category }}
+            <div class="box-element product">
+                <h6><strong>{{ product.name }}</strong></h6>
+                <hr>
+                <a href="{% url 'update-product' product.id  %}"><button class="btn btn-outline-warning btn-sm">Update Item</button></a>            
+                <a href="{% url 'delete-product' product.id  %}"><button class="btn btn-outline-success btn-sm">Delete Item</button></a>            
+                <h4 style="display: inline; float: right;">Rs. {{ product.price}}</h4>
+            </div>
+    
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- 
+<div class="login-form p-4" >
+    <form  method="POST">
+        {% csrf_token %}
+        <h2 class="text-center">Add Your Detail </h2>  
+        
+		<div class="form-group pt-4">
+            <input type="text" class="form-control" name="seller id" placeholder="seller id" required="required">
+        </div>        
+		<div class="form-group pt-4">
+            <input type="text" class="form-control" name="company name" placeholder="company name" required="required">
+        </div>        
+		<div class="form-group pt-4">
+            <input type="text" class="form-control" name="warehouse Location" placeholder="warehouse Location" required="required">
+        </div>        
+		<div class="form-group pt-4">
+            <input type="number" class="form-control" name="contact number" placeholder="contact number" required="required">
+        </div>        
+        <div class="form-group pt-4">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Continue</button>
+        </div>
+        
+    </form>
+</div> -->
+
+{% endblock %}

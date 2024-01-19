@@ -1,0 +1,247 @@
+{% extends 'store/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Slider -->
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active" data-bs-interval="3000">
+        <img src="{% static 'images/caraseoul-1.jpg' %}" class="d-block w-100">
+        <div class="carousel-caption">
+          <h1 class="mb-4">Creative Scrapyard</h1>
+          <p class="lead mb-4">Showcase various artworks and sculptures created using scrap materials. industry Highlight artists who specialize in using discarded items to create unique pieces..</p>
+          <a href="{% url 'store' %}" class="mt-2 btn btn-outline-light" role="button">Buy Now</a>      
+        </div>
+
+
+      </div>
+
+      
+      <a href="#scroll-down" class="hero__scroll-btn">
+        Explore <i class="bi bi-arrow-down-short"></i>
+      </a>
+
+      <div class="carousel-item" data-bs-interval="3000">
+        <img src="{% static 'images/caraseoul-2.jpg' %}" class="d-block w-100" alt="...">
+        <div class="carousel-caption">
+          <h1 class="mb-4">Creative Scrapyard</h1>
+          <p class="lead mb-4">Showcase various artworks and sculptures created using scrap materials. industry Highlight artists who specialize in using discarded items to create unique pieces..</p>
+          <a href="{% url 'store' %}" class="mt-2 btn btn-outline-light" role="button">Buy Now</a>      
+        </div>
+
+
+      </div>
+
+      <div class="carousel-item" data-bs-interval="3000">
+        <img src="{% static 'images/caraseoul-3.jpg' %}" class="d-block w-100" alt="...">
+        <div class="carousel-caption">
+          <h1 class="mb-4">Creative Scrapyard</h1>
+          <p class="lead mb-4">Showcase various artworks and sculptures created using scrap materials. industry Highlight artists who specialize in using discarded items to create unique pieces..</p>
+          <a href="{% url 'store' %}" class="mt-2 btn btn-outline-light" role="button">Buy Now</a>      
+        </div>
+
+      </div>
+    </div>
+   <!--   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button> -->
+  </div>
+
+    
+
+
+<a id="scroll-down"></a>
+
+<div class="step-info centerr">
+  <div class="row  justify-content-center" >
+    <div class="col col-lg-6">
+      <span>Celebrate the magic of the Holiday Season through exceptional gifts, selected for you among the different universes of the House. A poetic and enchanting ode to the art of wonder, dreams and beauty of the moments that make the holidays.</span>
+    </div>
+  </div>
+</div>
+
+
+<!--  Shop links
+  -->
+  <div class="container">
+    <div class="row">
+      <div class="col col-lg-12">
+        <h2>Discover Your Need:</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="steps container">
+    <div class="row centerr">
+      <div class="col-6 col-lg-3 col-md-3">
+        <a href="{% url 'store' %}"><img src="{% static 'images/art-1.jpeg' %}" alt="gifts" class="img-fluid shop-thumbnail">
+          </a>
+          <div class="caption p-2">
+            <a href="" style="text-decoration: none; color: black;"> <h5>Arts</h5></a>
+          </div>
+      </div>
+
+      <div class="col-6 col-lg-3 col-md-3 ">
+        <a href="{% url 'store' %}"><img src="{% static 'images/electronuc-1.jpg' %}" alt="gifts" class="img-fluid shop-thumbnail">
+          </a>
+          <div class="caption p-2">
+            <a href="" style="text-decoration: none; color: black;"> <h5>Electronic</h5></a>
+          </div>
+      </div>
+      <div class="col-6 col-lg-3 col-md-3 ">
+        <a href="{% url 'store' %}"><img src="{% static 'images/gifts-1.jpg' %}" alt="gifts" class="img-fluid shop-thumbnail">
+          </a>
+          <div class="caption p-2">
+            <a href="" style="text-decoration: none; color: black;"> <h5>Gifts for Kids</h5></a>
+          </div>
+      </div>
+      <div class="col-6 col-lg-3  col-md-3">
+        <a href="{% url 'store' %}"><img src="{% static 'images/homedecor-1.jpg' %}" alt="gifts" class="img-fluid shop-thumbnail">
+          </a>
+          <div class="caption p-2">
+            <a href="" style="text-decoration: none; color: black;"> <h5>Home decor and More</h5></a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- 
+about section
+ -->    
+ <div class="container">
+  <div class="row">
+    <div class="col col-lg-12">
+      <h2>Discover Your Need:</h2>
+    </div>
+  </div>
+</div>
+
+<div class="steps">
+  <div class="container">
+    <div class="row centerr ">
+      <div class="col-lg-6" >
+        <img class="img-fluid step-img" src="{% static 'images/box-3.jpg' %}" alt="jewellry" >
+      </div>
+      <div class="col-lg-6 align-self-center" >  
+        <div class="step-text ">
+          <h2>
+            Discover 100% Eco-friendly Products:
+          </h2>
+          <p>Eco-friendly products often utilize renewable resources in their production, such as bamboo, recycled paper, or organic cotton. This promotes responsible resource management and reduces dependence on finite materials. </p>
+          <strong><a href="#" style="color: black;"> discover</a></strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- about part2 -->
+
+<div class="steps container">
+  <div class="row centerr ">
+
+    <div class="col-12 col-lg-4 col-sm-12 align-self-center" >  
+      <div class="step-text ">
+        <h2>
+          Glass and Plastic Affect On Earth:
+        </h2>
+        <p>when glass enters the ocean, it poses a threat to marine life. Sharp glass fragments can injure or kill animals, and the presence of glass in the water can disrupt ecosystems. </p>
+        <strong><a href="#" style="color: black;"> discover</a></strong>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-6 col-lg-4 col-sm-6" >
+      <img class="img-fluid step-img" src="{% static 'images/box-1.jpg' %}" alt="jewellry" >
+
+
+    </div>
+    <div class="col-6 col-lg-4 col-xm-6" >
+      <img class="img-fluid step-img" src="{% static 'images/box-2.jpg' %}" alt="jewellry" >
+
+
+    </div>
+
+  </div>
+</div>
+<!-- step part 3 video -->
+<div class="steps step-background">
+  <div class="container">
+    <div class="row centerr ">
+      <div class="col-lg-4 align-self-center" >  
+        <div class="step-text ">
+          <h2>
+            Make The World A Better Place:
+          </h2>
+          <p>Share knowledge and raise awareness about important issues. Whether it's through social media, writing, or public speaking, contribute to the dissemination of information that can drive positive change and informed decision-making. </p>
+          <strong><a href="#" style="color: black;"> discover</a></strong>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="col-lg-8" >
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" loading="lazy" class="step-img">
+          <source src="{% static 'images/box-video.mp4' %}" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+    
+  </div>
+</div>
+<br>
+
+<!-- Recently added/Latest item -->
+<div class="steps container">
+  <div class="row p-0">
+    <div class="col col-md-6">
+      <h3>Latest items:</h3>
+    </div>
+
+    <div class="col col-md-6 justify-content-end d-flex">
+      <a href="">see all</a>
+    </div>
+  </div>
+
+
+  <div class="row ">
+      {% for product in products|slice:':4' %}
+      <div class="col-6 col-lg-3 " >
+          <img class="home-thumbnail" src="{{ product.image_url }}" alt="palceholder">
+          {{ product.category }}
+          <div class="home-box-element product">
+              <h6><strong>{{ product.name }}</strong></h6>
+              <hr>
+              <button data-product="{{ product.id }}" data-action="add" class="btn btn-outline-warning btn-sm update-cart"> Add to cart</button>
+              <a href="{% url 'product-detail' product.id %}"><button class="btn btn-outline-success btn-sm">view</button></a>
+              <h4 style="display: inline; float: right;">Rs.{{ product.price}}</h4>
+  
+          </div>
+      </div>
+      {% endfor %}
+</div>
+</div>
+<br>
+<hr>
+<!-- footer -->
+
+
+{% endblock content %}

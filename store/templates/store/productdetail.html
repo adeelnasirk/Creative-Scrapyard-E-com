@@ -1,0 +1,39 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content%}
+
+<style>
+    .main-area {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 40px;
+        background-color: #f8f9fa;
+    }
+
+    .product-cards {
+        background-color: white;
+        padding: 10px;
+    }
+</style>
+
+
+
+<div class="main-area ">
+    <div class="product-cards">
+        <div class="row featurette">
+            <div class="col-md-5">
+                <img src="{{ product.image_url }}" class="card-img-top" alt="...">
+
+            </div>
+            <div class="col-md-7">
+                <h2 class="featurette-heading">{{product.name}}</h2>
+                <p class="lead">Rs. {{product.price}}</p>
+                <a data-product="{{ product.id }}" data-action="add"  class="btn btn-primary update-cart" >Add To Cart</a>
+                <a data-product="{{ product.id }}" data-action="remove"  class="btn btn-primary update-cart" >Remove From Cart</a>
+            </div>
+            
+        </div>
+    </div>
+
+</div>
+{% endblock %}

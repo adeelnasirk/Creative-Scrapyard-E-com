@@ -1,0 +1,92 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<!-- {% if page == 'login' %}
+<div>
+    <form method='POST'>
+        {% csrf_token %}
+
+        <LAbel>Username:</LAbel>
+        <input type="text" name="username" placeholder="Enter username...">
+        <label>Password:</label>
+        <input type="password"  name="password" placeholder="Enter password...">
+
+        <input type="submit" value="login">
+    </form>
+    <p>Haven't signed up yet!</p>
+    <a href="">Sign up</a>
+</div>
+{% else %}
+<div>
+    <form method='POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Register">
+    </form>
+    <p>Already signed up! </p>
+    <a href="{% url 'login' %}">Log in</a>
+</div>
+{% endif %} -->
+
+ <style>
+    body {
+    
+        background: #092635;
+    }
+</style>
+
+{% if page == 'login' %}
+<div class="login-form p-4" >
+    <form  method="POST">
+        {% csrf_token %}
+
+        <h2 class="text-center">Login</h2>   
+        <div class="form-group has-error pt-4">
+        	<input type="text" class="form-control" name="username" placeholder="username" required="required">
+        </div>
+        <div class="form-group has-error pt-4">
+        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        </div>
+		<div class="form-group pt-4">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>        
+        <div class="form-group pt-4">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+        </div>
+        
+    </form>
+    <p class="text-center text-white small">Don't have an account? <a href="{% url 'register' %}">Sign up here!</a></p>
+</div>
+{% else %}
+
+<div class="login-form p-4" >
+    <form  method="POST">
+        {% csrf_token %}
+        <h2 class="text-center">Register/Sign up</h2>  
+        
+        <div class="form-group has-error pt-4">
+        	<input type="email" class="form-control" name="email" placeholder="email" required="required">
+        </div>
+
+		<div class="form-group pt-4">
+            <input type="text" class="form-control" name="username" placeholder="username" required="required">
+        </div>        
+		<div class="form-group pt-4">
+            <input type="password" class="form-control" name="password1" placeholder="Password" required="required">
+        </div>        
+		<div class="form-group pt-4">
+            <input type="password" class="form-control" name="password2" placeholder="Comfirm Password" required="required">
+        </div>        
+        <div class="form-group pt-4">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+        </div>
+        
+    </form>
+    <p class="text-center small text-white">Already have account? <a href="{% url 'login' %}">Log in here!</a></p>
+</div>
+
+{% endif %}
+
+
+{% endblock content %}

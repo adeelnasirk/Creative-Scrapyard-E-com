@@ -1,0 +1,71 @@
+{% load static %}
+<style>
+  .categorys{
+    color: #fff;;
+    border-radius: 5px;
+    background-color: #092635;
+  }
+
+  .category_list {
+    list-style: none;
+    
+  }
+
+  .category_list li a {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-light-gray);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .category_list li a.active,
+  .category_list li a:hover {
+    text-decoration: underline;
+    color: var(--color-main);
+  }
+
+  .category_list li a span {
+    padding: 0 1rem;
+    background-color: var(--color-dark);
+    border-radius: 3px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .category-list a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+
+<div class="categorys p-4 mt-2">
+    <div class="category-header">
+      <h4>Browse Category</h4>
+    </div>
+    
+    <ul class="category_list text-white mt-2">
+        <li>
+        <a href="{% url 'store' %}">All <span>{{ product_count }}</span> </a>
+        </li>
+        <li>
+            {% for category in categorys %}
+                   
+                <a href="{% url 'store' %}?q={{category.name}}"> {{ category.name }} <span>{{ category.product_set.all.count }}</span></a>
+                
+            {% endfor %}
+
+        </li>
+    </ul>
+    <!-- <a class="btn btn--link text-white" href="topics.html">
+      More
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+        <title>chevron-down</title>
+        <path d="M16 21l-13-13h-3l16 16 16-16h-3l-13 13z"></path>
+      </svg>
+    </a> -->
+  </div>
+  <!-- Topics End -->
