@@ -9,11 +9,14 @@
         <h2 class="text-center">Add Product</h2>
 
         <div class="form-group has-error pt-4">
-            <input required type="text" name="name" placeholder="Enter Product Name">Product Name</input>
+            <label>Product Name</label>
+            <input required type="text" name="name" placeholder="Enter Product Name"></input>
         </div>
 
         <div class="form-group has-error pt-4">
-            <input required type="number" name="price" placeholder="Enter Product Price">Product Price</input>
+            <label>Product Price</label>
+
+            <input required type="number" name="price" placeholder="Enter Product Price"></input>
         </div>
         <div class="form-group has-error pt-4">
             <select name="category" placeholder="Enter category">Category
@@ -23,6 +26,11 @@
                 <option value="{{ category.id }}">{{ category }}</option>
                 {% endfor %}
             </select>
+        </div>
+
+        <div class="form-group has-error pt-4">
+            <label>Create New category</label>
+            <input type="text" name="category_new" placeholder="Create new category"></input>
         </div>
 
         <div class="form-group-file has-error pt-4">

@@ -4,29 +4,32 @@
 
 
 <div class="store-container">
-<div class="row mx-2">
-
-    <div class="col-lg-3">
-        {% include 'store/category_component.html' %}
-    </div>
-
-    {% for product in products %}
-    <div class="col col-lg-3 " >
-        <img class="thumbnail" src="{{ product.image_url }}" alt="placeholder">
-        {{ product.category }}
-        <div class="box-element product">
-            <h6><strong>{{ product.name }}</strong></h6>
-            <hr>
-            <button data-product="{{ product.id }}" data-action="add" class="btn btn-outline-warning btn-sm update-cart"> Add to cart</button>
-            <a href="{% url 'product-detail' product.id %}"><button class="btn btn-outline-success btn-sm">view</button></a>            
-            <h5 style="display: inline; float: right;">Rs. {{ product.price}}</h5>
+    <div class="row">
+        <div class="col-lg-3">
+                {% include 'store/category_component.html' %}
         </div>
 
+        
+        <div class="col-lg-9">             
+            <div class="row mx-2">
+
+                {% for product in products %}
+                <div class="col col-lg-4 " >
+                    <img class="thumbnail" src="{{ product.image_url }}" alt="placeholder">
+                    {{ product.category }}
+                    <div class="box-element product">
+                        <h6><strong>{{ product.name }}</strong></h6>
+                        <hr>
+                        <button data-product="{{ product.id }}" data-action="add" class="btn btn-outline-warning btn-sm update-cart"> Add to cart</button>
+                        <a href="{% url 'product-detail' product.id %}"><button class="btn btn-outline-success btn-sm">view</button></a>            
+                        <h5 style="display: inline; float: right;">Rs. {{ product.price}}</h5>
+                    </div>
+
+                </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
     </div>
-    {% endfor %}
-
-
-</div>
-</div>
-
 {% endblock content %}
