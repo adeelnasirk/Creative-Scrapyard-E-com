@@ -2,6 +2,21 @@
 {% load static %}
 {% block content %}
 
+<style>
+    .cat-nav{
+        position: sticky;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 9vh;
+        overflow: hidden;
+        z-index: 100;
+    }
+</style>
+
+<div class="cat-nav">
+    {% include 'store/navbar.html' %}
+</div>
 
 <div class="store-container">
     <div class="row">
